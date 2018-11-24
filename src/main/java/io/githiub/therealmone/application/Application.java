@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 
 public class Application {
     private static final int ENCRYPTION_OFFSET = 13;
-    private static final int COUNT_OF_GRAMS = 3;
+    private static final int COUNT_OF_GRAMS = 2;
     private static final Injector injector = Guice.createInjector(new AppModule());
 
     public static void main(String[] args) throws Exception {

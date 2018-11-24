@@ -1,7 +1,6 @@
 package io.githiub.therealmone.services.impl;
 
 import com.google.inject.Singleton;
-import io.githiub.therealmone.model.NGram;
 import io.githiub.therealmone.model.NGramSet;
 import io.githiub.therealmone.services.FrequencyDecryptor;
 import org.apache.logging.log4j.LogManager;
@@ -12,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 @Singleton
-public class FrequencyDecryptorImpl implements FrequencyDecryptor {
-    private final static Logger logger = LogManager.getLogger(FrequencyDecryptorImpl.class);
+public class MonogramFrequencyDecryptorImpl implements FrequencyDecryptor {
+    private final static Logger logger = LogManager.getLogger(MonogramFrequencyDecryptorImpl.class);
 
     @Override
     public String decryptText(final List<NGramSet> originalTextFrequency, final List<NGramSet> encryptedTextFrequency, final String encryptedText) {
@@ -38,24 +37,14 @@ public class FrequencyDecryptorImpl implements FrequencyDecryptor {
         return builder.toString();
     }
 
-    private Map<Character, Character> matchingMapFrom(final List<NGramSet> originalTextFrequency, final List<NGramSet> encryptedTextFrequency) {
-        final Map<Character, Character> matchingMap = initMatchingMap(originalTextFrequency.get(0), encryptedTextFrequency.get(0));
-        for (int i = 1; i < originalTextFrequency.size(); i++) {
-            modifyMatchingMap(matchingMap, originalTextFrequency.get(i), encryptedTextFrequency.get(i));
-        }
-        return matchingMap;
-    }
-
-    private Map<Character, Character> initMatchingMap(final NGramSet originalMonograms, final NGramSet encryptedMonograms) {
+    protected Map<Character, Character> matchingMapFrom(final List<NGramSet> originalTextFrequency, final List<NGramSet> encryptedTextFrequency) {
         //Так как все NGram'ы в наборах упорядочены по частоте, то составляем карту по правилу original(i) -> encrypted(i)
+        final NGramSet originalMonograms = originalTextFrequency.get(0);
+        final NGramSet encryptedMonograms = encryptedTextFrequency.get(0);
         final Map<Character, Character> matchingMap = new HashMap<>();
         for (int i = 0; i < originalMonograms.getNGrams().size(); i++) {
             matchingMap.put(encryptedMonograms.getNGrams().get(i).getValue().charAt(0), originalMonograms.getNGrams().get(i).getValue().charAt(0));
         }
         return matchingMap;
-    }
-
-    private void modifyMatchingMap(final Map<Character, Character> matchingMap, final NGramSet originalNGramSet, final NGramSet encryptedNGramSet) {
-        
     }
 }

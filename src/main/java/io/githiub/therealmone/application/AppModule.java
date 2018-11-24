@@ -3,8 +3,9 @@ package io.githiub.therealmone.application;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import io.githiub.therealmone.services.FrequencyAnalyzer;
+import io.githiub.therealmone.services.impl.BiGramFrequencyDecryptorImpl;
 import io.githiub.therealmone.services.impl.FrequencyAnalyzerImpl;
-import io.githiub.therealmone.services.impl.FrequencyDecryptorImpl;
+import io.githiub.therealmone.services.impl.MonogramFrequencyDecryptorImpl;
 import io.githiub.therealmone.services.impl.TextEncryptorImpl;
 import io.githiub.therealmone.services.FrequencyDecryptor;
 import io.githiub.therealmone.services.TextEncryptor;
@@ -17,7 +18,7 @@ public class AppModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(TextEncryptor.class).to(TextEncryptorImpl.class);
-        bind(FrequencyDecryptor.class).to(FrequencyDecryptorImpl.class);
+        bind(FrequencyDecryptor.class).to(BiGramFrequencyDecryptorImpl.class);
         bind(FrequencyAnalyzer.class).to(FrequencyAnalyzerImpl.class);
         bind(TextComparator.class);
     }
