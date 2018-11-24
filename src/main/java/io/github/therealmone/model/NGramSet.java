@@ -1,4 +1,4 @@
-package io.githiub.therealmone.model;
+package io.github.therealmone.model;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package io.githiub.therealmone.services.impl;
+package io.github.therealmone.services.impl;
 
 import com.google.inject.Singleton;
-import io.githiub.therealmone.services.TextEncryptor;
+import io.github.therealmone.services.TextEncryptor;
 import com.google.inject.Inject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

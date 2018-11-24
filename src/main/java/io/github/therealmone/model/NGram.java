@@ -1,4 +1,4 @@
-package io.githiub.therealmone.model;
+package io.github.therealmone.model;
 
 public class NGram {
     private final String value;

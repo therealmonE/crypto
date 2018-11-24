@@ -1,9 +1,8 @@
-package impl;
+package io.github.therealmone.services.impl;
 
-import io.githiub.therealmone.model.NGram;
-import io.githiub.therealmone.model.NGramSet;
-import io.githiub.therealmone.services.FrequencyAnalyzer;
-import io.githiub.therealmone.services.impl.FrequencyAnalyzerImpl;
+import io.github.therealmone.model.NGram;
+import io.github.therealmone.model.NGramSet;
+import io.github.therealmone.services.FrequencyAnalyzer;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -58,11 +57,14 @@ public class FrequencyAnalyzerTest {
             assertEquals(1, testListOfNGram.size());
 
             nGramSet = testListOfNGram.get(0).getNGrams();
-            assertEquals(2, nGramSet.size());
+            assertEquals(33, nGramSet.size());
             assertEquals("А", nGramSet.get(0).getValue());
             assertEquals(0.5, nGramSet.get(0).getFrequency(), 0);
             assertEquals("Б", nGramSet.get(1).getValue());
             assertEquals(0.5, nGramSet.get(1).getFrequency(), 0);
+            for (int i = 2; i < nGramSet.size(); i++) {
+                assertEquals(0.0, nGramSet.get(i).getFrequency(), 0);
+            }
         }
 
         //bigram
@@ -71,11 +73,14 @@ public class FrequencyAnalyzerTest {
             assertEquals(2, testListOfNGram.size());
 
             nGramSet = testListOfNGram.get(0).getNGrams();
-            assertEquals(2, nGramSet.size());
+            assertEquals(33, nGramSet.size());
             assertEquals("А", nGramSet.get(0).getValue());
             assertEquals(0.5, nGramSet.get(0).getFrequency(), 0);
             assertEquals("Б", nGramSet.get(1).getValue());
             assertEquals(0.5, nGramSet.get(1).getFrequency(), 0);
+            for (int i = 2; i < nGramSet.size(); i++) {
+                assertEquals(0.0, nGramSet.get(i).getFrequency(), 0);
+            }
 
             nGramSet = testListOfNGram.get(1).getNGrams();
             assertEquals(3, nGramSet.size());
@@ -93,11 +98,14 @@ public class FrequencyAnalyzerTest {
             assertEquals(3, testListOfNGram.size());
 
             nGramSet = testListOfNGram.get(0).getNGrams();
-            assertEquals(2, nGramSet.size());
+            assertEquals(33, nGramSet.size());
             assertEquals("А", nGramSet.get(0).getValue());
             assertEquals(0.5, nGramSet.get(0).getFrequency(), 0);
             assertEquals("Б", nGramSet.get(1).getValue());
             assertEquals(0.5, nGramSet.get(1).getFrequency(), 0);
+            for (int i = 2; i < nGramSet.size(); i++) {
+                assertEquals(0.0, nGramSet.get(i).getFrequency(), 0);
+            }
 
             nGramSet = testListOfNGram.get(1).getNGrams();
             assertEquals(3, nGramSet.size());
@@ -122,11 +130,14 @@ public class FrequencyAnalyzerTest {
             assertEquals(4, testListOfNGram.size());
 
             nGramSet = testListOfNGram.get(0).getNGrams();
-            assertEquals(2, nGramSet.size());
+            assertEquals(33, nGramSet.size());
             assertEquals("А", nGramSet.get(0).getValue());
             assertEquals(0.5, nGramSet.get(0).getFrequency(), 0);
             assertEquals("Б", nGramSet.get(1).getValue());
             assertEquals(0.5, nGramSet.get(1).getFrequency(), 0);
+            for (int i = 2; i < nGramSet.size(); i++) {
+                assertEquals(0.0, nGramSet.get(i).getFrequency(), 0);
+            }
 
             nGramSet = testListOfNGram.get(1).getNGrams();
             assertEquals(3, nGramSet.size());

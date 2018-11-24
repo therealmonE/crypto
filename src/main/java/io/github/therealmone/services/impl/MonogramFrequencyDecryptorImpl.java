@@ -1,8 +1,8 @@
-package io.githiub.therealmone.services.impl;
+package io.github.therealmone.services.impl;
 
 import com.google.inject.Singleton;
-import io.githiub.therealmone.model.NGramSet;
-import io.githiub.therealmone.services.FrequencyDecryptor;
+import io.github.therealmone.model.NGramSet;
+import io.github.therealmone.services.FrequencyDecryptor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

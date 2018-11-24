@@ -1,7 +1,6 @@
-package impl;
+package io.github.therealmone.services.impl;
 
-import io.githiub.therealmone.services.TextEncryptor;
-import io.githiub.therealmone.services.impl.TextEncryptorImpl;
+import io.github.therealmone.services.TextEncryptor;
 import org.junit.Test;
 
 import java.util.ArrayList;

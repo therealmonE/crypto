@@ -1,11 +1,11 @@
-package io.githiub.therealmone.application;
+package io.github.therealmone.application;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import io.githiub.therealmone.services.FrequencyAnalyzer;
-import io.githiub.therealmone.services.FrequencyDecryptor;
-import io.githiub.therealmone.services.TextEncryptor;
-import io.githiub.therealmone.utils.TextComparator;
+import io.github.therealmone.services.FrequencyAnalyzer;
+import io.github.therealmone.services.FrequencyDecryptor;
+import io.github.therealmone.services.TextEncryptor;
+import io.github.therealmone.utils.TextComparator;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

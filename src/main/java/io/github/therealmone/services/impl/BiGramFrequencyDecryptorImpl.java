@@ -1,13 +1,15 @@
-package io.githiub.therealmone.services.impl;
+package io.github.therealmone.services.impl;
 
-import io.githiub.therealmone.model.NGram;
-import io.githiub.therealmone.model.NGramSet;
-import io.githiub.therealmone.services.FrequencyDecryptor;
+import com.google.inject.Singleton;
+import io.github.therealmone.model.NGram;
+import io.github.therealmone.model.NGramSet;
+import io.github.therealmone.services.FrequencyDecryptor;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Singleton
 public class BiGramFrequencyDecryptorImpl extends MonogramFrequencyDecryptorImpl implements FrequencyDecryptor {
     @Override
     protected Map<Character, Character> matchingMapFrom(final List<NGramSet> originalTextFrequency, final List<NGramSet> encryptedTextFrequency) {

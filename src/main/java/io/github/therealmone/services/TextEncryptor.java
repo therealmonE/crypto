@@ -1,4 +1,4 @@
-package io.githiub.therealmone.services;
+package io.github.therealmone.services;
 
 public interface TextEncryptor {
     /**

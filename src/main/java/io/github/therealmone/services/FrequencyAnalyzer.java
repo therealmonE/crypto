@@ -1,6 +1,6 @@
-package io.githiub.therealmone.services;
+package io.github.therealmone.services;
 
-import io.githiub.therealmone.model.NGramSet;
+import io.github.therealmone.model.NGramSet;
 
 import java.util.List;
 
